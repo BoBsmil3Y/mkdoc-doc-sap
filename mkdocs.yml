@@ -1,0 +1,53 @@
+site_name: Doc SAP
+nav:
+  - Home: index.md
+  - Test Unitaire: Test_unitaires.md
+theme:
+  name: material
+  features: 
+    - navigation.instant # clicks on all internal links will be intercepted and dispatched via XHR without fully reloading the page
+    - navigation.instant.prefetch # start to fetch a page once the user hovers over a link
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.path # breadcrumb navigation is rendered above the title of each page
+    - navigation.prune # only the visible navigation items are included in the rendered HTML
+    - navigation.footer
+
+    - search.suggest # the search will display the likeliest completion for the last word
+    - search.highlight
+    - search.share
+
+    - header.autohide
+
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  palette:
+    - scheme : default
+      primary: amber
+      accent: orange
+      toffle: 
+        icon : material/toggle-switch-off-outline
+        name: Switch to sombre mode
+    
+    - scheme : slate
+      primary: amber
+      accent: orange
+      toffle: 
+        icon : material/toggle-switch
+        name: Switch to clair mode
+plugins:
+  - search
+  - social
+
+#pip install pillow cairosvg
+#pip install pipwin
+#pipwin install cairocffi
+
+extra:
+  social:
+    - icon: fontawesome/brands/github 
+      link: https://github.com/BoBsmil3Y
