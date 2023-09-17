@@ -1,21 +1,27 @@
 site_name: Doc SAP
+site_author: Antoine Dupont
+site_description: >-
+  Doc SAP est un site de documentation permettant de partager du code, astuces,
+  et autres informations utiles quant à l'utilisation du progiciel.
+
 nav:
   - Home: index.md
   - Test Unitaire: Test_unitaires.md
   - Creer une page: documentation.md
+
+
 theme:
   name: material
   # icon: 
     # logo: assetsocticons/code-square-24
   features: 
     - navigation.instant # clicks on all internal links will be intercepted and dispatched via XHR without fully reloading the page
-    - navigation.instant.prefetch # start to fetch a page once the user hovers over a link
+    # - navigation.instant.prefetch # start to fetch a page once the user hovers over a link
     - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.sections
     - navigation.top
     - navigation.path # breadcrumb navigation is rendered above the title of each page
-    - navigation.prune # only the visible navigation items are included in the rendered HTML
+    # - navigation.prune # only the visible navigation items are included in the rendered HTML
     - navigation.footer
 
     - search.suggest # the search will display the likeliest completion for the last word
@@ -24,25 +30,33 @@ theme:
 
     - header.autohide
 
-    - content.tabs.link
-    - content.code.annotation
+    - content.code.annotate
     - content.code.copy
     - content.tooltips
+    - content.tabs.link
+    #- content.code.select
+    #- content.code.annotation
+
   language: en
+  
   palette:
-    - scheme : default
+    - scheme: default
       primary: amber
       accent: orange
-      toffle: 
-        icon : material/toggle-switch-off-outline
+      toggle:
+        icon: material/toggle-switch-off-outline
         name: Switch to sombre mode
-    
-    - scheme : slate
+    - scheme: slate
       primary: amber
       accent: orange
-      toffle: 
-        icon : material/toggle-switch
+      toggle:
+        icon: material/toggle-switch
         name: Switch to clair mode
+  
+  font:
+    text: Roboto
+    code: Roboto Mono
+
   icon:
     admonition:
       note: octicons/tag-16
@@ -61,6 +75,7 @@ theme:
 plugins:
   - search
   - social
+  - optimize
 
 extra:
   generator: false
@@ -75,12 +90,20 @@ copyright: |
 
 markdown_extensions:
   - attr_list
-  - pymdownx.emoji:
+  - admonition
+  - md_in_html
+  - pymdownx.details            # supercharges the Admonition extension, making the resulting call-outs collapsible
+  - pymdownx.inlinehilite       # add support for syntax highlighting of inline code blocks
+  - pymdownx.superfences        # allows for arbitrary nesting of code and content blocks inside each other
+
+  - pymdownx.emoji:             #  automatically inlines bundled and custom icons and emojis
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
-
-  - md_in_html
+  
+  - pymdownx.highlight:         # adds support for syntax highlighting of code blocks
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  
+  - pymdownx.tabbed:            # enables content tabs
+      alternate_style: true
