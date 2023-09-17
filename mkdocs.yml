@@ -2,7 +2,7 @@ site_name: Doc SAP
 nav:
   - Home: index.md
   - Test Unitaire: Test_unitaires.md
-  - How to: autre_page.md
+  - Creer une page: documentation.md
 theme:
   name: material
   # icon: 
@@ -62,10 +62,6 @@ plugins:
   - search
   - social
 
-#pip install pillow cairosvg
-#pip install pipwin
-#pipwin install cairocffi
-
 extra:
   generator: false
   social:
@@ -86,3 +82,5 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+
+  - md_in_html
