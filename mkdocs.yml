@@ -21,7 +21,6 @@ theme:
     - navigation.sections
     - navigation.top
     - navigation.path # breadcrumb navigation is rendered above the title of each page
-    # - navigation.prune # only the visible navigation items are included in the rendered HTML
     - navigation.footer
 
     - search.suggest # the search will display the likeliest completion for the last word
@@ -34,24 +33,24 @@ theme:
     - content.code.copy
     - content.tooltips
     - content.tabs.link
-    #- content.code.select
-    #- content.code.annotation
 
   language: en
   
   palette:
-    - scheme: default
-      primary: amber
-      accent: orange
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to sombre mode
-    - scheme: slate
-      primary: amber
-      accent: orange
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to clair mode
+    scheme: sap
+    accent: sap
+    # - scheme: default
+    #   primary: amber
+    #   accent: orange
+    #   toggle:
+    #     icon: material/toggle-switch-off-outline
+    #     name: Switch to sombre mode
+    # - scheme: slate
+    #   primary: amber
+    #   accent: orange
+    #   toggle:
+    #     icon: material/toggle-switch
+    #     name: Switch to clair mode
   
   font:
     text: Roboto
@@ -75,6 +74,9 @@ theme:
 plugins:
   - search
   - social
+
+extra_css:
+  - stylesheet/extra.css
 
 extra:
   generator: false
