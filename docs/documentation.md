@@ -1,3 +1,8 @@
+---
+title: Documentation de documentation 
+description: Cette page liste les fonctionnalités possibles pour créer une page de documentation.
+---
+
 # Documentation de documentation
 
 ## **Fonctionnement de la page**
@@ -28,7 +33,7 @@ Phrase avec un [tooltip]("I'm a tooltip!") (sans lien).
 
 ## **Encadrements**
 
-Encadrement simple :   
+### Encadrement simple :   
 
 !!! note
 
@@ -42,7 +47,7 @@ Encadrement simple :
 ```
 <br>
 
-avec un titre :    
+### Titre    
 
 !!! question "Est-ce que c'est bon pour vouuuuus ?"
 
@@ -53,6 +58,8 @@ avec un titre :
     Une phrase qu'aurait prononcé Gandhi lors d'une conférence environnementale en Normandie.
 ```
 <br>
+
+### Ouvert / fermé
 
 ajoute la possibilité de réduire l'encadrement (en remplaçant les '!!!' par '???') :   
 ??? note
@@ -86,6 +93,8 @@ l'ouvrir par défaut (en ajoutant '+'):
     massa, nec semper lorem quam in massa.
 ```
 <br>
+
+### Placement
 
 Il les possible de les placer sur les côtés grace aux mots-clés 'inline end' (droite) et 'inline' (gauche) :   
 !!! info inline end "Lorem ipsum"
@@ -183,8 +192,18 @@ Il est possible d'y ajouter une icône :
 ## **Bloc de code**
 Afin d'avoir une documentation présentable, les blocs de code sont très importants. Aussi personnalisable que les autres éléments, voici la liste des possibilités.   
 
+### Titre
 Mettre un titre avec l'option 'title="bubble_sort.py"'' :
 
+````md
+``` py title="bubble_sort.py"
+def bubble_sort(items):
+    for i in range(len(items)):
+        for j in range(len(items) - 1 - i):
+            if items[j] > items[j + 1]:
+                items[j], items[j + 1] = items[j + 1], items[j]
+```
+````
 ``` py title="bubble_sort.py"
 def bubble_sort(items):
     for i in range(len(items)):
@@ -195,8 +214,18 @@ def bubble_sort(items):
 
 <br>
 
+### Numéro de ligne
 Ajouter le numéro de ligne avec l'option 'linenums="1"' :
 
+````md
+``` py linenums="1"
+def bubble_sort(items):
+    for i in range(len(items)):
+        for j in range(len(items) - 1 - i):
+            if items[j] > items[j + 1]:
+                items[j], items[j + 1] = items[j + 1], items[j]
+```
+````
 ``` py linenums="1"
 def bubble_sort(items):
     for i in range(len(items)):
@@ -206,7 +235,18 @@ def bubble_sort(items):
 ```
 <br>
 
+### Highlight
 Mettre en valeur une, plusieurs ou un range de ligne avec 'hl_lines="2 4"' :   
+````md
+``` py hl_lines="2 4"
+def bubble_sort(items):
+    for i in range(len(items)):
+        for j in range(len(items) - 1 - i):
+            if items[j] > items[j + 1]:
+                items[j], items[j + 1] = items[j + 1], items[j]
+```
+````
+
 ``` py hl_lines="2 4"
 def bubble_sort(items):
     for i in range(len(items)):
@@ -217,6 +257,16 @@ def bubble_sort(items):
 <br>
 
 ou 'hl_lines="3-5"' :   
+````md
+``` py hl_lines="3-5"
+def bubble_sort(items):
+    for i in range(len(items)):
+        for j in range(len(items) - 1 - i):
+            if items[j] > items[j + 1]:
+                items[j], items[j + 1] = items[j + 1], items[j]
+```
+````
+
 ``` py hl_lines="3-5"
 def bubble_sort(items):
     for i in range(len(items)):
@@ -226,6 +276,7 @@ def bubble_sort(items):
 ```
 <br>
 
+### Inline block
 Il est possible de spécifier sur un simple bloc de code le langage pour ajouter la coloration, ici \`#!python range()\`:
 
 - The `#!python range()` function is used to generate a sequence of numbers.
@@ -265,7 +316,7 @@ Afin de pouvoir afficher plusieurs versions de texte, code ... ou même créer d
     }
     ```
 
-```txt
+````md
 === "C"
 
     ``` c linenums="1"
@@ -287,7 +338,7 @@ Afin de pouvoir afficher plusieurs versions de texte, code ... ou même créer d
       return 0;
     }
     ```
-```
+````
 <br>
 
 ## **Tableau**
@@ -308,39 +359,125 @@ Il est possible de choisir la disposition du contenu dans un tableau. Cela se fa
 | `DELETE`    | :material-close:     Delete resource | 7hxb4e  |
 ```
 
+## Diagrammes
+### Diagramme de flux
+Diagramme sous forme de [Flowcharts](https://mermaid-js.github.io/mermaid/#/flowchart "documentation officielle") pour représenter des flux.
+````md
+``` mermaid
+graph LR
+  A[Start] --> B{Error?};
+  B -->|Yes| C[Hmm...];
+  C --> D[Debug];
+  D --> B;
+  B ---->|No| E[Yay!];
+```
+````
 
-```md
+``` mermaid
+graph LR
+  A[Start] --> B{Error?};
+  B -->|Yes| C[Hmm...];
+  C --> D[Debug];
+  D --> B;
+  B ---->|No| E[Yay!];
+```
 
+<br>
+
+### Diagramme de séquence
+Les [Sequence diagrams](https://mermaid-js.github.io/mermaid/#/flowchart "documentation officielle") pour définir des scénarios.
+```` markdown title="Sequence diagram"
+``` mermaid
+sequenceDiagram
+  autonumber
+  Alice->>John: Hello John, how are you?
+  loop Healthcheck
+      John->>John: Fight against hypochondria
+  end
+  Note right of John: Rational thoughts!
+  John-->>Alice: Great!
+  John->>Bob: How about you?
+  Bob-->>John: Jolly good!
+```
+````
+
+``` mermaid
+sequenceDiagram
+  autonumber
+  Alice->>John: Hello John, how are you?
+  loop Healthcheck
+      John->>John: Fight against hypochondria
+  end
+  Note right of John: Rational thoughts!
+  John-->>Alice: Great!
+  John->>Bob: How about you?
+  Bob-->>John: Jolly good!
 ```
 <br>
 
-```md
+### Diagramme de classe
 
+Les [Class diagrams](https://mermaid-js.github.io/mermaid/#/classDiagram "documentation officielle") sont idéals pour créer des schémas de programme orienté objet (POO).
+
+```` markdown title="Class diagram"
+``` mermaid
+classDiagram
+  Person <|-- Student
+  Person <|-- Professor
+  Person : +String name
+  Person : +String phoneNumber
+  Person : +String emailAddress
+  Person: +purchaseParkingPass()
+  Address "1" <-- "0..1" Person:lives at
+  class Student{
+    +int studentNumber
+    +int averageMark
+    +isEligibleToEnrol()
+    +getSeminarsTaken()
+  }
+  class Professor{
+    +int salary
+  }
+  class Address{
+    +String street
+    +String city
+    +String state
+    +int postalCode
+    +String country
+    -validate()
+    +outputAsLabel()  
+  }
+```
+````
+
+``` mermaid
+classDiagram
+  Person <|-- Student
+  Person <|-- Professor
+  Person : +String name
+  Person : +String phoneNumber
+  Person : +String emailAddress
+  Person: +purchaseParkingPass()
+  Address "1" <-- "0..1" Person:lives at
+  class Student{
+    +int studentNumber
+    +int averageMark
+    +isEligibleToEnrol()
+    +getSeminarsTaken()
+  }
+  class Professor{
+    +int salary
+  }
+  class Address{
+    +String street
+    +String city
+    +String state
+    +int postalCode
+    +String country
+    -validate()
+    +outputAsLabel()  
+  }
 ```
 <br>
 
-```md
-
-```
-<br>
-
-```md
-
-```
-<br>
-
-```md
-
-```
-<br>
-
-```md
-
-```
-<br>
-
-```md
-
-```
-<br>
-
+Pour plus de documentation sur le langage `mermaid`, la documentation officielle est [disponible ici](https://mermaid-js.github.io/mermaid/ "documentation officielle").

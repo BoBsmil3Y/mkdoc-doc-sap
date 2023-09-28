@@ -6,13 +6,13 @@ site_description: >-
 
 nav:
   - Home: index.md
-  - Creer une page: documentation.md
+  - Créer une page: documentation.md
 
 
 theme:
   name: material
-  # icon: 
-    # logo: assetsocticons/code-square-24
+  icon: 
+    logo: material/code-brackets
   features: 
     - navigation.instant # clicks on all internal links will be intercepted and dispatched via XHR without fully reloading the page
     - navigation.instant.prefetch # start to fetch a page once the user hovers over a link
