@@ -6,8 +6,9 @@ site_description: >-
 
 nav:
   - Home: index.md
+  - Technique:
+    - ALV: Technique/alv.md
   - Créer une page: documentation.md
-
 
 theme:
   name: material

@@ -1,4 +1,13 @@
-# Welcome to MkDocs
+---
+title: Documentation SAP ACSSI/UNIS
+description: Site contenant la documentation maintenant par les collaborateurs ACSSI/UNIS.
+
+hide:
+  - navigation
+  - toc
+---
+
+# Documentation SAP
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
