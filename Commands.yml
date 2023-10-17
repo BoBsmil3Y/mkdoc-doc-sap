@@ -1,3 +1,8 @@
 pip install mkdocs mkdocs-material pillow cairosvg pipwin
 pipwin install cairocffi
 mkdocs serve
+
+# Oracle free cloud
+sudo apt install firewalld
+sudo firewall-cmd --zone=public --permanent --add-port=80/tcp
+sudo firewall-cmd --reload
