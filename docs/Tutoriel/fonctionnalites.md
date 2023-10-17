@@ -9,6 +9,15 @@ description: Cette page liste les fonctionnalités possibles pour créer une pag
 Cette page vous montera les différentes fonctionnalités afin de créer des pages de documentations propres et agréable à lire.   
 Chaque fonctionnalité de mise en page sera listée ci-dessous. Chaque élément sera suivi par le code permettant de le générer.
 
+## **Entête de page**
+Afin de changer le titre ou la description de la page, il est possible de l'indiquer en entête du fichier MD. 
+```md
+---
+title: 
+description: 
+---
+```
+
 ## **Tooltips**
 
 Phrase avec un [tooltip](https://example.com "I'm a tooltip!") (avec lien).
