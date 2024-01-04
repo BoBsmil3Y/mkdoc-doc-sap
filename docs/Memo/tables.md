@@ -1,6 +1,10 @@
 ---
 title: Liste des tables importantes
 description: Trop de tables existent. Ici, on donne les principales !
+
+hide:
+  - navigation
+  - toc
 ---
 
 # Tables
