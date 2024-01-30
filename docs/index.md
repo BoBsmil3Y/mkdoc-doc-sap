@@ -7,20 +7,17 @@ hide:
   - toc
 ---
 
-# TEST Documentation SAP
+# Documentation SAP
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Ce site recense la documentation construite au fûr et à mesure de l'expérience de l'équipe.
 
-## Commands
+On y retrouve :   
+* une partie technique, 
+* une partie fonctionnelle, 
+* une partie mémo comprennant une liste de tables et code transactions importants à connaitre. Ainsi que des ressources (forum, tuto) à avoir sous la main   
+* et enfin, une veille technologique centré sur ABAP et l'environnement technique.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## Créer ses pages
+Vous pouvez créer des pages qui seront ajoutées à ce sites en suivant le modèle des pages existantes. Vous trouverez un tutoriel avec les fonctionnalités disponibles afin de créer des pages agréables à lire ici :
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+[:sparkles: Fonctionnalités](#/Tutoriel/fonctionnalites/){ .md-button }
