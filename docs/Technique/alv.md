@@ -65,6 +65,7 @@ Il existe plusieurs modes de sélection sur une ALV.
 
 Liste des modes :
 
+//TODO
 * `SINGLE` -> 
 * `MULTIPLE` -> 
 * `CELL` -> 
@@ -91,6 +92,36 @@ Cela comprend les fonctions de tris, de recherche, de filtre, etc.
 
 ### Evénements
 
+
+### Changer le nom d'une colonne
+```ABAP
+TRY.
+  lr_col ?= gr_salv->get_columns( )->get_column( 'MATNR' ).
+  lr_col->set_short_text( 'MATNR' ).
+  lr_col->set_medium_text( 'MATNR' ).
+  lr_col->set_long_text( 'MATNR' ).
+      
+CATCH cx_salv_not_found.
+      " Handle error here
+ENDTRY.
+```
+
+### Afficher des champs comme clés
+Il faut d'abord activer le mode de clé, et ensuite définir pour chaque colonne voulue, que c'est une clé.
+```ABAP
+lo_cols = gr_salv->get_columns( ).
+lo_cols->set_key_fixation( ).
+
+TRY.
+	lo_col ?= gr_salv->get_columns( )->get_column( 'MATNR' ).
+	lo_col->set_key( abap_true ).    
+CATCH cx_salv_not_found.
+	" Handle error here
+ENDTRY.
+```
+!!! info
+	Ces cases seront affichées en bleu, contrairement au gris habituel pour les autres cases.
+
 ## Créer sa propre fonction
 !!! warning "Prérequis" 
 	Afin de pouvoir ajouter des fonctions personnalisées, il est nécessaire d'ajouter l'ALV dans un *container* via le *screen painter*. Sans ça, un *dump* sera lancé.
@@ -105,14 +136,13 @@ DATA:
 cl_salv_table=>factory(
         EXPORTING
           container_name = lv_container_display_name
-          r_container = lo_container
+          r_container    = lo_container
         IMPORTING
           r_salv_table   = lo_alv
         CHANGING
           t_table        = lt_alv_data " itab de données quelconque
       ).
 ```
-
-//TODO
+Le `container` correspond à un élément d'un écran. On peut en rajouter manuellement sur un écran avec l'outil `Screen Painter` accessible via le bouton `Layout`, en étant en édition sur le code d'un écran du programme.
 
 ## Affichage en couleur
