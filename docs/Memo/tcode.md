@@ -12,6 +12,7 @@ hide:
 | TCODE    | Description                          | Catégorie |
 | ---------| ------------------------------------ | --------- |
 | `SAT`    | Permet de réaliser une analyse de performance (utilisation de processeur et base de donneés) sur un programme avec une variante donnée. | Analyse |
+| `SM12`   | Liste les locks posés sur des programmes par des développeurs en train d'éditer ces derniers. Possibilité de les supprimer à la main. | Analyse |
 | `SM37`   | Permet de visualiser les programmes qui ont tourné en arrière plan (jobs). | Analyse |
 | `ST05`    | Permet de réaliser une analyse de performance (SQL, Buffer, Enqueue, RFC, HTTP, APC, AMC) sur un programme. | Analyse |
 | `ST12`   | Permet d'exécuter des analyses sur les programmes lancés par un utilisateur. Les fonctions, requêtes, ... afin d'obtenir par exemple des informations sur des optimisations possibles. | Analyse |
